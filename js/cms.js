@@ -157,8 +157,11 @@ function injectCmsUI() {
   const btn = document.createElement('div');
   btn.id = 'cms-login-btn';
   btn.innerHTML = '⚙';
-  btn.title = '관리자';
-  btn.onclick = () => cmsMode ? cmsLogout() : showLoginModal();
+  btn.title = cmsMode ? '관리자 모드 끄기' : '관리자';
+  btn.onclick = function(e) {
+    e.stopPropagation();
+    if (cmsMode) { cmsLogout(); } else { showLoginModal(); }
+  };
   document.body.appendChild(btn);
 
   // 로그인 모달
@@ -404,7 +407,9 @@ function cmsLogout() {
   cmsMode = false;
   document.body.classList.remove('cms-active');
   document.getElementById('cms-toolbar').classList.remove('show');
-  document.getElementById('cms-login-btn').classList.remove('active');
+  const loginBtn = document.getElementById('cms-login-btn');
+  loginBtn.classList.remove('active');
+  loginBtn.title = '관리자';
   document.getElementById('cms-add-card-btn').style.display = 'none';
   renderProjectCards();
   showToast('로그아웃됨');

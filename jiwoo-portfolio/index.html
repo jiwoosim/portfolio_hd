@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>심지우 · PR CENTER · 현대오토에버 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/insight.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<!-- ═══════════ GNB ═══════════ -->
+<header class="gnb">
+  <div class="gnb-wrap">
+    <div class="gnb-logo" onclick="showPage('home')">
+      <div class="gnb-logo-icon"><span>SJ</span></div>
+      <div class="gnb-logo-text">심지우 포트폴리오 <small>PR CENTER · 현대오토에버 2026</small></div>
+    </div>
+    <ul class="gnb-menu">
+      <li><a href="#" id="nav-home"    onclick="showPage('home');return false;"    class="active">Home</a></li>
+      <li><a href="#" id="nav-who"     onclick="showPage('who');return false;"              >Who is She?</a></li>
+      <li><a href="#" id="nav-skill"   onclick="showPage('skill');return false;"            >Business Skill</a></li>
+      <li><a href="#" id="nav-insight" onclick="showPage('insight');return false;"          >Inside &amp; Insight</a></li>
+      <li><a href="#" id="nav-vision"  onclick="showPage('vision');return false;"           >Vision</a></li>
+    </ul>
+    <div class="gnb-right">
+      <span class="gnb-cta">PR 담당 지원</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- 히어로 KV -->
+  <div class="hero-grid">
+    <!-- 슬라이드 -->
+    <div class="hero-main">
+      <div class="hero-slide active" id="slide-0">
+        <div class="hs-bg hs-bg-1"></div>
+        <div class="hs-content">
+          <p class="hs-tag">Featured · 농협은행 20억 수주</p>
+          <h2 class="hs-title">기술을 'CISO 리스크'로<br>번역해 20억 수주를 이끌다</h2>
+          <p class="hs-desc">규제 리스크 → 책임 주체 → 운영 시나리오 → 통합 아키텍처. 3개사 경쟁 PT에서 최종 선정</p>
+        </div>
+      </div>
+      <div class="hero-slide" id="slide-1">
+        <div class="hs-bg hs-bg-2"></div>
+        <div class="hs-content">
+          <p class="hs-tag">Intersec Dubai 2025 · 전시 DX</p>
+          <h2 class="hs-title">전시를 영업 파이프라인으로,<br>유효 미팅 97% 상승</h2>
+          <p class="hs-desc">R&amp;D 협업으로 생체인증 등록 시스템 기획·개발, 실제 상용 제품으로 출시</p>
+        </div>
+      </div>
+      <div class="hero-slide" id="slide-2">
+        <div class="hs-bg hs-bg-3"></div>
+        <div class="hs-content">
+          <p class="hs-tag">GEO 전략 · AI 검색 최적화</p>
+          <h2 class="hs-title">AI가 가장 먼저 인용하는<br>콘텐츠 전략가</h2>
+          <p class="hs-desc">GEO 선제 도입으로 검색 유입 26%↑, GPT·Gemini·Google AI에서 우선 인용 기반 확보</p>
+        </div>
+      </div>
+      <div class="hs-nav">
+        <div class="hs-dots">
+          <div class="hs-dot on"  onclick="goSlide(0)"></div>
+          <div class="hs-dot"     onclick="goSlide(1)"></div>
+          <div class="hs-dot"     onclick="goSlide(2)"></div>
+        </div>
+        <div class="hs-arrows">
+          <div class="hs-arr" onclick="prevSlide()">&#8592;</div>
+          <div class="hs-arr" onclick="nextSlide()">&#8594;</div>
+        </div>
+      </div>
+    </div>
+    <!-- 우측 썸네일 -->
+    <div class="hero-side">
+      <div class="hs-thumb" onclick="showPage('insight')">
+        <div class="hs-thumb-bg thumb-bg-1"></div>
+        <div class="hs-thumb-overlay"></div>
+        <div class="hs-thumb-content">
+          <span class="hs-thumb-badge insight">INSIGHT</span>
+          <p class="hs-thumb-title">데이터가 만드는<br>구매 설득력</p>
+        </div>
+      </div>
+      <div class="hs-thumb" onclick="showPage('insight')">
+        <div class="hs-thumb-bg thumb-bg-2"></div>
+        <div class="hs-thumb-overlay"></div>
+        <div class="hs-thumb-content">
+          <span class="hs-thumb-badge news">NEWSROOM</span>
+          <p class="hs-thumb-title">AI 검색 시대,<br>GEO 선점 전략</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Business Skill 카드 -->
+  <div class="biz-section reveal">
+    <div class="biz-empty">
+      <p class="biz-empty-label">Business Skill</p>
+      <h3 class="biz-empty-title">전략 수립부터 실무 완결까지,<br>심지우의 핵심 역량</h3>
+    </div>
+    <div class="biz-card biz-card-1" onclick="showPage('skill')">
+      <p class="biz-card-badge">PR · Communication</p>
+      <h3 class="biz-card-title">기술 언어를 비즈니스로 번역하는 PR 역량</h3>
+      <p class="biz-card-desc">기술 스펙을 경영진의 결정 언어로 재구조화해 실질적 수주와 성과를 만드는 커뮤니케이션 역량</p>
+      <div class="biz-tags">
+        <span class="biz-tag">제안서 설계</span>
+        <span class="biz-tag">GEO 전략</span>
+        <span class="biz-tag">브랜드 아키텍처</span>
+        <span class="biz-tag">이슈 대응</span>
+      </div>
+    </div>
+    <div class="biz-card biz-card-2" onclick="showPage('skill')">
+      <p class="biz-card-badge">AI · Digital Foundation</p>
+      <h3 class="biz-card-title">AI 자동화로 마케팅 인프라를 구축하는 역량</h3>
+      <p class="biz-card-desc">Make·GPT API·CRM 연동으로 8,000건 DB 자동화, GEO IA 설계로 AI 검색 시대를 선점하는 디지털 역량</p>
+      <div class="biz-tags">
+        <span class="biz-tag">Make 자동화</span>
+        <span class="biz-tag">GPT API</span>
+        <span class="biz-tag">Google Analytics</span>
+        <span class="biz-tag">WordPress</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inside & Insight 미리보기 -->
+  <div class="home-insight inner">
+    <div class="home-insight-hd reveal">
+      <h2 class="home-insight-title">Inside &amp; Insight</h2>
+      <span class="home-insight-more" onclick="showPage('insight')">더보기</span>
+    </div>
+    <div class="home-ig-grid reveal">
+      <div class="ig-col">
+        <div class="ig-card" onclick="showPage('insight')">
+          <div class="ig-card-thumb"><div class="ig-thumb-bg thumb-20b"><div class="ig-thumb-inner"><span class="ig-thumb-label">20억 수주</span></div></div></div>
+          <div class="ig-card-body">
+            <p class="ig-badge"><span class="ig-badge-dot project"></span>Project · 전략기획</p>
+            <h3 class="ig-title">농협은행 통합 인증센터 — CISO 스토리라인으로 20억 수주 기여</h3>
+            <p class="ig-desc">기술 스펙 대신 규제 리스크·책임·운영 시나리오로 재구조화</p>
+            <div class="ig-result">
+              <div class="ig-result-item"><div class="ig-result-num">20억</div><div class="ig-result-label">수주</div></div>
+              <div class="ig-result-item"><div class="ig-result-num">3대</div><div class="ig-result-label">은행 활용</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ig-card" onclick="showPage('insight')">
+          <div class="ig-card-thumb"><div class="ig-thumb-bg thumb-intersec"><div class="ig-thumb-inner"><span class="ig-thumb-label">Intersec Dubai</span></div></div></div>
+          <div class="ig-card-body">
+            <p class="ig-badge"><span class="ig-badge-dot project"></span>Project · 전시 DX</p>
+            <h3 class="ig-title">Intersec Dubai 2025 — 전시 DX 전환으로 유효 미팅 97% 상승</h3>
+            <p class="ig-desc">리드 파이프라인 전체 설계, 기획한 시스템 상용 제품 출시</p>
+            <div class="ig-result">
+              <div class="ig-result-item"><div class="ig-result-num">+97%</div><div class="ig-result-label">유효미팅</div></div>
+              <div class="ig-result-item"><div class="ig-result-num">54%</div><div class="ig-result-label">리드 비중</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ig-col">
+        <div class="ig-dark-card" onclick="showPage('insight')">
+          <div class="ig-dark-badge">Insight · GEO 전략</div>
+          <h3 class="ig-dark-title">AI가 가장 먼저 인용하는 'First Source' — GEO 아키텍처 설계로 검색 유입 26% 증가</h3>
+          <p class="ig-dark-meta">㈜유니온바이오메트릭스 · 2024</p>
+          <div class="ig-dark-arrow">↓</div>
+        </div>
+        <div class="ig-dark-card" onclick="showPage('insight')">
+          <div class="ig-dark-badge">Insight · AI 자동화</div>
+          <h3 class="ig-dark-title">Make + GPT API로 파트너 DB 8,000건 정제 자동화 — 공수 80% 절감, 정합도 96%</h3>
+          <p class="ig-dark-meta">㈜유니온바이오메트릭스 · 2024</p>
+          <div class="ig-dark-arrow">↓</div>
+        </div>
+      </div>
+      <div>
+        <div class="ig-news-list">
+          <div class="ig-news-item" onclick="showPage('insight')">
+            <p class="ig-news-badge">브랜드 전략</p>
+            <h3 class="ig-news-title">사명 변경 브랜드 메시지 아키텍처 재설계 — 신한은행 "내부 자료로 활용 가능" 평가</h3>
+            <div class="ig-news-img"><div class="ig-news-img-bg thumb-brand" style="height:100%;"></div></div>
+          </div>
+          <div class="ig-news-item" onclick="showPage('insight')">
+            <p class="ig-news-badge">공공 PR · SNS</p>
+            <h3 class="ig-news-title">양천구청 홍보팀 인턴 — SNS 전략 제안으로 유튜브 구독자 4,000→12,000+ 성장</h3>
+            <p class="news-stat">구독자 +8,000명</p>
+            <div class="ig-news-img"><div class="ig-news-img-bg news-thumb-dark" style="height:100%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="ft-logo">PR <span>CENTER</span> · 심지우</div>
+        <div class="ft-sub">Sim Jiwoo · Portfolio 2026</div>
+        <div class="ft-desc">현대오토에버 전략기획본부 PR부서<br>PR 담당 직무 지원 포트폴리오<br><br>© 2026 Sim Jiwoo. All rights reserved.</div>
+      </div>
+      <div>
+        <p class="ft-col-title">페이지</p>
+        <a class="ft-link" href="#" onclick="showPage('who');return false;">Who is She?</a>
+        <a class="ft-link" href="#" onclick="showPage('skill');return false;">Business Skill</a>
+        <a class="ft-link" href="#" onclick="showPage('insight');return false;">Inside &amp; Insight</a>
+        <a class="ft-link" href="#" onclick="showPage('vision');return false;">Vision</a>
+      </div>
+      <div>
+        <p class="ft-col-title">경력</p>
+        <span class="ft-link">㈜유니온바이오메트릭스 마케팅팀</span>
+        <span class="ft-link">양천구청 홍보팀 행정인턴</span>
+        <span class="ft-link">GTEP 16기 무역인재양성</span>
+        <span class="ft-link">Hince 인핸서크루 5기</span>
+      </div>
+      <div>
+        <p class="ft-col-title">Contact</p>
+        <div class="ft-contact-row">Tel. 010-7306-2545</div>
+        <div class="ft-contact-row">jiwoosim@naver.com</div>
+        <div class="ft-contact-row">Instagram. @simju_01</div>
+        <div class="ft-contact-row" style="margin-top:10px; color:rgba(255,255,255,.18); font-size:10px;">한국공학대학교 IT경영학과 졸업</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>© 2026 SIM JIWOO — ALL RIGHTS RESERVED</span>
+      <span>FOR HYUNDAI AUTOEVER RECRUITMENT PURPOSE ONLY</span>
+    </div>
+  </footer>
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════════
+     WHO IS SHE?
+═══════════════════════════════════════════ -->
+<div id="page-who" class="page">
+  <div class="who-hero">
+    <div class="who-hero-inner">
+      <div class="reveal">
+        <p class="who-label">Who is She?</p>
+        <h1 class="who-title">기술을 <em>신뢰</em>로,<br>신뢰를 <em>성과</em>로.</h1>
+        <p class="who-desc">기술을 '비즈니스'로 번역하는 전략형 B2B 마케터. 농협은행 통합 인증센터 20억 수주에 기여하고, GEO 전략으로 AI 검색 유입을 26% 끌어올린 심지우입니다.</p>
+        <div class="who-stats">
+          <div class="who-stat"><div class="who-stat-num">20<sub>억</sub></div><div class="who-stat-label">수주 기여</div></div>
+          <div class="who-stat"><div class="who-stat-num">97<sub>%</sub></div><div class="who-stat-label">유효미팅 증가</div></div>
+          <div class="who-stat"><div class="who-stat-num">26<sub>%</sub></div><div class="who-stat-label">AI 검색유입</div></div>
+          <div class="who-stat"><div class="who-stat-num">2<sub>년+</sub></div><div class="who-stat-label">B2B 실무</div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="who-profile">
+          <div class="who-profile-head">Contact &amp; Profile</div>
+          <div class="who-profile-row"><span class="who-profile-key">이름</span><span class="who-profile-val">심지우 Sim Jiwoo<small>2001.06.27</small></span></div>
+          <div class="who-profile-row"><span class="who-profile-key">Email</span><span class="who-profile-val">jiwoosim@naver.com</span></div>
+          <div class="who-profile-row"><span class="who-profile-key">Phone</span><span class="who-profile-val">010-7306-2545</span></div>
+          <div class="who-profile-row"><span class="who-profile-key">Location</span><span class="who-profile-val">서울 송파구</span></div>
+          <div class="who-profile-row"><span class="who-profile-key">학력</span><span class="who-profile-val">한국공학대학교 IT경영학과<small>복수전공 이커머스 · 2024.02 졸업</small></span></div>
+          <div class="who-profile-row"><span class="who-profile-key">경력</span><span class="who-profile-val">㈜유니온바이오메트릭스 마케팅팀<small>2023.09 ~ 현재 · 총 2년 2개월</small></span></div>
+          <div class="who-profile-row"><span class="who-profile-key">어학</span><span class="who-profile-val">OPic IH (영어)</span></div>
+          <div class="who-profile-row"><span class="who-profile-key">SNS</span><span class="who-profile-val">Instagram @simju_01</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="who-body">
+    <div class="who-body-grid">
+      <div class="reveal">
+        <p class="who-section-label">지원 동기</p>
+        <h2 class="who-section-title">20억 수주를 이끈 기술 번역가,<br>현대오토에버의 기술 신뢰를 설계하겠습니다</h2>
+        <blockquote class="who-quote">"PR은 단순히 정보를 알리는 창구를 넘어, 데이터와 사실을 전략적으로 배열해 의사결정의 확신을 만드는 역할입니다."</blockquote>
+        <p class="who-section-body">현대오토에버는 IT 서비스 기업을 넘어 SDV 전환과 '피지컬 AI' 시대를 주도하는 모빌리티 소프트웨어의 중추입니다. 저는 보안·SI 분야에서 기술을 경영진의 언어로 재구조화해 실질적 수주와 성장을 만들어왔습니다.</p>
+        <p class="who-section-body">농협은행 통합 인증센터 제안 시 기술 스펙 나열 대신 'CISO 책임 하 통합 거버넌스' 관점으로 스토리라인을 재설계해 20억 원 규모 수주에 기여한 경험을 바탕으로, 현대오토에버의 기술 가치를 시장의 신뢰로 연결하는 PR 담당자가 되겠습니다.</p>
+      </div>
+      <div class="reveal reveal-d2">
+        <p class="who-section-label">핵심 역량 · 성장 스토리</p>
+        <h2 class="who-section-title">문제 발견과 돌파를 통해<br>기술 가치를 증명해 온 성장</h2>
+        <p class="who-section-body">저의 성장 과정은 주어진 역할에 머무르기보다, 기술이 제대로 평가받지 못하는 구조적 문제를 발견하고 이를 비즈니스 성과로 전환해 온 과정이었습니다.</p>
+        <p class="who-section-body">세계 최대 보안 전시회 Intersec Dubai 2025에서 "장비가 아닌 엔드투엔드 보안 운영 경험을 보여줘야 한다"는 문제의식으로 전시 기획 총괄을 자원했습니다. 방문객 등록→체험→상담→사후 마케팅이 하나로 연결되는 구조를 기획하며, 기획한 시스템이 실제 제품으로 출시되는 경험을 했습니다.</p>
+        <p class="who-section-body">마케팅 메시지를 설계할 때도 기능 요약에 머무르지 않고, 제도적 배경·리스크 구조·기술 원리까지 파고들어 설득 가능한 스토리를 만드는 '과몰입형 워커홀릭'입니다.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><div class="ft-logo">PR <span>CENTER</span> · 심지우</div><div class="ft-sub">Sim Jiwoo · 2026</div><div class="ft-desc">© 2026 Sim Jiwoo. All rights reserved.</div></div>
+      <div><p class="ft-col-title">페이지</p><a class="ft-link" href="#" onclick="showPage('home');return false;">Home</a><a class="ft-link" href="#" onclick="showPage('skill');return false;">Business Skill</a><a class="ft-link" href="#" onclick="showPage('insight');return false;">Inside &amp; Insight</a><a class="ft-link" href="#" onclick="showPage('vision');return false;">Vision</a></div>
+      <div><p class="ft-col-title">Contact</p><span class="ft-link">jiwoosim@naver.com</span><span class="ft-link">010-7306-2545</span></div>
+      <div><p class="ft-col-title">Apply</p><div class="ft-contact-row">현대오토에버 전략기획본부 PR부서</div></div>
+    </div>
+    <div class="footer-copy"><span>© 2026 SIM JIWOO</span><span>FOR HYUNDAI AUTOEVER RECRUITMENT ONLY</span></div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     BUSINESS SKILL
+═══════════════════════════════════════════ -->
+<div id="page-skill" class="page">
+  <div class="skill-page">
+    <div class="skill-page-hd reveal">
+      <p class="sec-label">Business Skill</p>
+      <h1 class="sec-title">전략 수립부터 실무 완결까지<br>심지우의 핵심 역량</h1>
+      <p class="sec-desc">기술을 비즈니스로 번역하고, AI로 인프라를 자동화하며, 데이터로 성과를 증명합니다.</p>
+    </div>
+    <div class="skill-cards reveal">
+      <div class="skill-card">
+        <div class="sc-num">01</div>
+        <p class="sc-label">Strategic Communication</p>
+        <h3 class="sc-title">기술 언어를<br>비즈니스로 번역하는 역량</h3>
+        <p class="sc-body">기술 스펙 나열이 아닌, 고객의 리스크·책임·운영 언어로 재구조화해 의사결정자의 확신을 끌어내는 역량. 농협은행 CISO 거버넌스 스토리라인 설계로 20억 수주 기여.</p>
+        <div class="sc-tags"><span class="sc-tag">제안서 설계</span><span class="sc-tag">스토리라인</span><span class="sc-tag">B2B 리스크 커뮤니케이션</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="sc-num">02</div>
+        <p class="sc-label">GEO · Digital PR</p>
+        <h3 class="sc-title">AI 검색 시대를<br>선점하는 GEO 전략 역량</h3>
+        <p class="sc-body">생성형 AI 검색 환경 전환에 주목해 GEO 전략 선제 도입. IA 설계·콘텐츠 퍼널 운영으로 GPT·Gemini에서 자사 솔루션 우선 인용 기반 확보. GA4 검색 유입 26%↑.</p>
+        <div class="sc-tags"><span class="sc-tag">GEO 전략</span><span class="sc-tag">IA 설계</span><span class="sc-tag">콘텐츠 퍼널</span><span class="sc-tag">WordPress</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="sc-num">03</div>
+        <p class="sc-label">Brand Architecture</p>
+        <h3 class="sc-title">브랜드 메시지<br>아키텍처 설계 역량</h3>
+        <p class="sc-body">사명 변경 시 '제품 공급자'에서 '통합 보안 플랫폼 기업'으로 브랜드 재정의. 영업·전시·파트너·온보딩 공통 메시지 템플릿 표준화. 신한은행 "내부 설명 자료로 활용 가능" 평가.</p>
+        <div class="sc-tags"><span class="sc-tag">브랜드 아키텍처</span><span class="sc-tag">포지셔닝</span><span class="sc-tag">메시지 표준화</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="sc-num">04</div>
+        <p class="sc-label">AI · Marketing Automation</p>
+        <h3 class="sc-title">AI 자동화로<br>마케팅 인프라를 구축하는 역량</h3>
+        <p class="sc-body">Make + ChatGPT API + CRM 연동 파이프라인 구축. 8,000건 파트너 DB를 7단계 자동화 로직으로 정제해 공수 80% 절감, 데이터 정합도 96% 달성.</p>
+        <div class="sc-tags"><span class="sc-tag">Make 자동화</span><span class="sc-tag">GPT API</span><span class="sc-tag">CRM 연동</span></div>
+      </div>
+    </div>
+    <div class="skill-bars-section reveal">
+      <div>
+        <div class="sb-group">
+          <p class="sb-group-title">PR · Communication Skills</p>
+          <div class="sb-row"><span class="sb-name">기술 언어 → 비즈니스 번역</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:95%"></div></div><span class="sb-lvl">●●●</span></div>
+          <div class="sb-row"><span class="sb-name">제안서·스토리라인 설계</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:93%"></div></div><span class="sb-lvl">●●●</span></div>
+          <div class="sb-row"><span class="sb-name">GEO / 디지털 PR 전략</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:90%"></div></div><span class="sb-lvl">●●●</span></div>
+          <div class="sb-row"><span class="sb-name">브랜드 메시지 아키텍처</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:88%"></div></div><span class="sb-lvl">●●●</span></div>
+          <div class="sb-row"><span class="sb-name">전시 기획 / DX 설계</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:85%"></div></div><span class="sb-lvl">●●●</span></div>
+          <div class="sb-row"><span class="sb-name">이슈 모니터링·리포팅</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:87%"></div></div><span class="sb-lvl">●●●</span></div>
+          <div class="sb-row"><span class="sb-name">영문 커뮤니케이션 (OPic IH)</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:75%"></div></div><span class="sb-lvl">IH</span></div>
+        </div>
+        <div class="sb-group">
+          <p class="sb-group-title">AI & Digital Tools</p>
+          <div class="sb-row"><span class="sb-name">생성형 AI (GPT·Gemini)</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:95%"></div></div><span class="sb-lvl">실무</span></div>
+          <div class="sb-row"><span class="sb-name">Make 자동화 파이프라인</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:80%"></div></div><span class="sb-lvl">실무</span></div>
+          <div class="sb-row"><span class="sb-name">Google Analytics (GAIQ)</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:82%"></div></div><span class="sb-lvl">자격증</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="sb-group">
+          <p class="sb-group-title">Tools & Platforms</p>
+          <div class="tools-grid">
+            <span class="tool-tag hl">ChatGPT / Gemini</span><span class="tool-tag hl">Google Analytics</span><span class="tool-tag hl">Make</span><span class="tool-tag">WordPress</span><span class="tool-tag">Adobe Ps/Ai/Pr</span><span class="tool-tag">Figma</span><span class="tool-tag">MS PowerPoint</span><span class="tool-tag">HTML5 / JS</span><span class="tool-tag">Capcut</span><span class="tool-tag">MySQL</span><span class="tool-tag">Photoroom</span><span class="tool-tag">LinkedIn</span>
+          </div>
+        </div>
+        <div class="sb-group" style="margin-top:28px;">
+          <p class="sb-group-title">Certificate & Education</p>
+          <div class="cert-list-light">
+            <div class="cert-row-light"><span class="cert-idx">01</span><span class="cert-nm">GAIQ — Google Analytics Individual Qualification</span><span class="cert-yr">2025.12</span></div>
+            <div class="cert-row-light"><span class="cert-idx">02</span><span class="cert-nm">OPic IH (영어)</span><span class="cert-yr">2025.12</span></div>
+            <div class="cert-row-light"><span class="cert-idx">03</span><span class="cert-nm">한국공학대학교 IT경영학과 학사</span><span class="cert-yr">2024.02</span></div>
+            <div class="cert-row-light"><span class="cert-idx">04</span><span class="cert-nm">GTEP 16기 무역인재양성 수료</span><span class="cert-yr">2022-23</span></div>
+            <div class="cert-row-light"><span class="cert-idx">05</span><span class="cert-nm">Hince 인핸서크루 5기 공식 서포터즈</span><span class="cert-yr">2026~</span></div>
+            <div class="cert-row-light"><span class="cert-idx">06</span><span class="cert-nm">2종 보통 운전면허</span><span class="cert-yr">2023</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><div class="ft-logo">PR <span>CENTER</span> · 심지우</div><div class="ft-sub">Sim Jiwoo · 2026</div><div class="ft-desc">© 2026 Sim Jiwoo. All rights reserved.</div></div>
+      <div><p class="ft-col-title">페이지</p><a class="ft-link" href="#" onclick="showPage('home');return false;">Home</a><a class="ft-link" href="#" onclick="showPage('who');return false;">Who is She?</a><a class="ft-link" href="#" onclick="showPage('insight');return false;">Inside &amp; Insight</a><a class="ft-link" href="#" onclick="showPage('vision');return false;">Vision</a></div>
+      <div><p class="ft-col-title">Contact</p><span class="ft-link">jiwoosim@naver.com</span><span class="ft-link">010-7306-2545</span></div>
+      <div><p class="ft-col-title">Apply</p><div class="ft-contact-row">현대오토에버 전략기획본부 PR부서</div></div>
+    </div>
+    <div class="footer-copy"><span>© 2026 SIM JIWOO</span><span>FOR HYUNDAI AUTOEVER RECRUITMENT ONLY</span></div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     INSIDE & INSIGHT — PR 센터 스타일
+═══════════════════════════════════════════ -->
+<div id="page-insight" class="page">
+  <!-- PR 센터 히어로 (첨부 이미지와 동일) -->
+  <div class="pr-hero">
+    <div class="pr-hero-inner">
+      <h1 class="pr-hero-title">Inside &amp; Insight</h1>
+    </div>
+  </div>
+
+  <!-- 탭 네비게이션 (뉴스/블로그/뉴스레터구독/인사이트 구조) -->
+  <div class="pr-tabs">
+    <div class="pr-tabs-inner">
+      <div class="pr-tab active"    id="pr-tab-전체"   onclick="switchInsightTab('전체')">전체</div>
+      <div class="pr-tab"           id="pr-tab-수주"   onclick="switchInsightTab('수주')">수주·제안</div>
+      <div class="pr-tab"           id="pr-tab-전시"   onclick="switchInsightTab('전시')">전시·DX</div>
+      <div class="pr-tab"           id="pr-tab-디지털" onclick="switchInsightTab('디지털')">디지털PR·GEO</div>
+      <div class="pr-tab"           id="pr-tab-자동화" onclick="switchInsightTab('자동화')">AI·자동화</div>
+      <div class="pr-tab"           id="pr-tab-브랜드" onclick="switchInsightTab('브랜드')">브랜드</div>
+    </div>
+  </div>
+
+  <!-- 필터 바 -->
+  <div class="pr-filter">
+    <p class="pr-filter-count" id="pr-count">총 <strong>6</strong>건</p>
+    <div class="pr-filter-right">
+      <select class="pr-filter-select">
+        <option>카테고리</option>
+        <option>수주·제안</option>
+        <option>전시·DX</option>
+        <option>디지털PR</option>
+        <option>AI·자동화</option>
+      </select>
+      <div class="pr-search-wrap">
+        <input class="pr-search-input" id="pr-search-input" type="text" placeholder="검색어 입력" oninput="searchCards()">
+        <button class="pr-search-btn">🔍</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 카드 그리드 (PR 센터 이미지와 동일한 3열 구조) -->
+  <div class="pr-card-grid">
+
+    <!-- 01 농협은행 20억 -->
+    <div class="pr-card" data-category="수주">
+      <div class="pr-card-img">
+        <div class="pr-card-img-bg pc-bg-1">
+          <div class="pr-card-img-inner">
+            <span class="pc-img-badge">수주·제안</span>
+            <span class="pc-img-title">농협은행<br>통합 인증센터</span>
+          </div>
+        </div>
+      </div>
+      <div class="pr-card-body">
+        <p class="pr-card-tag"><span class="pr-card-tag-dot"></span>전략기획 · 제안서 설계</p>
+        <h3 class="pr-card-title">농협은행 통합 인증센터 20억 수주 기여 — CISO 거버넌스 스토리라인 재설계</h3>
+        <p class="pr-card-date">2024.09</p>
+        <div class="pr-card-result">
+          <div class="pr-card-result-item"><div class="pcr-num">20억</div><div class="pcr-label">수주</div></div>
+          <div class="pr-card-result-item"><div class="pcr-num">3대</div><div class="pcr-label">은행 활용</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Intersec Dubai -->
+    <div class="pr-card" data-category="전시">
+      <div class="pr-card-img">
+        <div class="pr-card-img-bg pc-bg-2">
+          <div class="pr-card-img-inner">
+            <span class="pc-img-badge">전시·DX</span>
+            <span class="pc-img-title">Intersec<br>Dubai 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="pr-card-body">
+        <p class="pr-card-tag"><span class="pr-card-tag-dot"></span>전시 DX · 리드 파이프라인</p>
+        <h3 class="pr-card-title">Intersec Dubai 2025 — DX 전환으로 유효 미팅 97% 상승, 기획 시스템 상용 출시</h3>
+        <p class="pr-card-date">2025.01</p>
+        <div class="pr-card-result">
+          <div class="pr-card-result-item"><div class="pcr-num">+97%</div><div class="pcr-label">유효미팅</div></div>
+          <div class="pr-card-result-item"><div class="pcr-num">54%</div><div class="pcr-label">리드 비중</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 GEO 전략 -->
+    <div class="pr-card" data-category="디지털">
+      <div class="pr-card-img">
+        <div class="pr-card-img-bg pc-bg-3">
+          <div class="pr-card-img-inner">
+            <span class="pc-img-badge">디지털PR·GEO</span>
+            <span class="pc-img-title">GEO<br>AI 검색 최적화</span>
+          </div>
+        </div>
+      </div>
+      <div class="pr-card-body">
+        <p class="pr-card-tag"><span class="pr-card-tag-dot"></span>GEO · IA 설계 · 콘텐츠 퍼널</p>
+        <h3 class="pr-card-title">GEO 전략 도입 — AI 검색 선점, GA4 검색 유입 26%↑ · MQL 5건 확보</h3>
+        <p class="pr-card-date">2024.06</p>
+        <div class="pr-card-result">
+          <div class="pr-card-result-item"><div class="pcr-num">+26%</div><div class="pcr-label">검색 유입</div></div>
+          <div class="pr-card-result-item"><div class="pcr-num">5건</div><div class="pcr-label">MQL</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 DB 자동화 -->
+    <div class="pr-card" data-category="자동화">
+      <div class="pr-card-img">
+        <div class="pr-card-img-bg pc-bg-4">
+          <div class="pr-card-img-inner">
+            <span class="pc-img-badge">AI·자동화</span>
+            <span class="pc-img-title">Make +<br>GPT API</span>
+          </div>
+        </div>
+      </div>
+      <div class="pr-card-body">
+        <p class="pr-card-tag"><span class="pr-card-tag-dot"></span>AI 자동화 · CRM 파이프라인</p>
+        <h3 class="pr-card-title">파트너 DB 8,000건 AI 정제 자동화 — 공수 80% 절감, 데이터 정합도 96%</h3>
+        <p class="pr-card-date">2024.04</p>
+        <div class="pr-card-result">
+          <div class="pr-card-result-item"><div class="pcr-num">80%</div><div class="pcr-label">공수 절감</div></div>
+          <div class="pr-card-result-item"><div class="pcr-num">96%</div><div class="pcr-label">정합도</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 브랜드 아키텍처 -->
+    <div class="pr-card" data-category="브랜드">
+      <div class="pr-card-img">
+        <div class="pr-card-img-bg pc-bg-5">
+          <div class="pr-card-img-inner">
+            <span class="pc-img-badge">브랜드</span>
+            <span class="pc-img-title">브랜드 메시지<br>아키텍처</span>
+          </div>
+        </div>
+      </div>
+      <div class="pr-card-body">
+        <p class="pr-card-tag"><span class="pr-card-tag-dot"></span>브랜드 전략 · 메시지 표준화</p>
+        <h3 class="pr-card-title">사명 변경 기반 브랜드 메시지 아키텍처 재설계 — 신한은행 "내부 자료로 활용 가능" 평가</h3>
+        <p class="pr-card-date">2024.03</p>
+        <div class="pr-card-result">
+          <div class="pr-card-result-item"><div class="pcr-num">↓70%</div><div class="pcr-label">설명 시간</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 양천구청 -->
+    <div class="pr-card" data-category="브랜드">
+      <div class="pr-card-img">
+        <div class="pr-card-img-bg pc-bg-6">
+          <div class="pr-card-img-inner">
+            <span class="pc-img-badge">공공 PR</span>
+            <span class="pc-img-title">양천구청<br>홍보팀</span>
+          </div>
+        </div>
+      </div>
+      <div class="pr-card-body">
+        <p class="pr-card-tag"><span class="pr-card-tag-dot"></span>공공 PR · SNS 전략</p>
+        <h3 class="pr-card-title">양천구청 홍보팀 인턴 — SNS 전략 제안으로 유튜브 구독자 4,000→12,000+ 성장</h3>
+        <p class="pr-card-date">2022.07</p>
+        <div class="pr-card-result">
+          <div class="pr-card-result-item"><div class="pcr-num">3배↑</div><div class="pcr-label">구독자</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pr-card-grid -->
+
+  <!-- 더보기 버튼 (PR 센터 + 원형 버튼) -->
+  <div class="pr-more">
+    <button class="pr-more-btn" title="더보기">+</button>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><div class="ft-logo">PR <span>CENTER</span> · 심지우</div><div class="ft-sub">Sim Jiwoo · 2026</div><div class="ft-desc">© 2026 Sim Jiwoo. All rights reserved.</div></div>
+      <div><p class="ft-col-title">페이지</p><a class="ft-link" href="#" onclick="showPage('home');return false;">Home</a><a class="ft-link" href="#" onclick="showPage('who');return false;">Who is She?</a><a class="ft-link" href="#" onclick="showPage('skill');return false;">Business Skill</a><a class="ft-link" href="#" onclick="showPage('vision');return false;">Vision</a></div>
+      <div><p class="ft-col-title">Contact</p><span class="ft-link">jiwoosim@naver.com</span><span class="ft-link">010-7306-2545</span></div>
+      <div><p class="ft-col-title">Apply</p><div class="ft-contact-row">현대오토에버 전략기획본부 PR부서</div></div>
+    </div>
+    <div class="footer-copy"><span>© 2026 SIM JIWOO</span><span>FOR HYUNDAI AUTOEVER RECRUITMENT ONLY</span></div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     VISION
+═══════════════════════════════════════════ -->
+<div id="page-vision" class="page">
+  <div class="vision-page">
+    <div class="vp-hd reveal">
+      <p class="sec-label">Vision</p>
+      <h1 class="sec-title">비전 및 커리어 계획</h1>
+    </div>
+    <div class="vp-hero reveal">
+      <p class="vp-hero-label">Vision Statement</p>
+      <h2 class="vp-hero-title">20억 수주를 이끈 기술 번역가,<br>현대오토에버의 기술 신뢰를 설계하겠습니다</h2>
+      <p class="vp-hero-body">현대오토에버는 SDV 전환과 '피지컬 AI' 시대를 주도하는 모빌리티 소프트웨어의 중추입니다. 기술을 경영진의 언어로 재구조화해 수주를 견인하고, GEO 전략으로 AI 검색 유입을 끌어올린 경험을 바탕으로, 현대오토에버의 기술 가치를 시장의 신뢰로 연결하는 PR 담당자로서 두 가지 커리어 목표를 달성하겠습니다.</p>
+    </div>
+    <div class="vp-goals reveal">
+      <div class="vp-goal">
+        <p class="vp-goal-period">Short-Term Goal · 입사 후 1년</p>
+        <h3 class="vp-goal-title">글로벌 모빌리티 이슈를 '쟁점-영향-시사점' 구조로 정리해 경영진 판단을 지원</h3>
+        <p class="vp-goal-body">단순 뉴스 클리핑을 넘어 SDV 전환·제조DX·사이버보안 등 현대오토에버 핵심 이슈를 인사이트 체계로 고도화하겠습니다. 유관부서와 협업해 이슈 대응 표준 프로세스를 구축하고, 경영진과 현업이 빠르고 정확하게 판단할 수 있도록 지원하겠습니다.</p>
+      </div>
+      <div class="vp-goal">
+        <p class="vp-goal-period">Long-Term Goal · 3년 후</p>
+        <h3 class="vp-goal-title">'One Message, Local Proof' 원칙 아래 글로벌 기술 신뢰 자산 구축</h3>
+        <p class="vp-goal-body">현대오토에버의 핵심 기술과 사업 성과를 권역별 규제·시장 관행에 맞는 기술 백서와 사례형 콘텐츠로 자산화하겠습니다. GEO 역량을 더해 글로벌 시장에서 반복적으로 참조되는 신뢰도 높은 정보 자산으로 만들겠습니다.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><div class="ft-logo">PR <span>CENTER</span> · 심지우</div><div class="ft-sub">Sim Jiwoo · 2026</div><div class="ft-desc">© 2026 Sim Jiwoo. All rights reserved.</div></div>
+      <div><p class="ft-col-title">페이지</p><a class="ft-link" href="#" onclick="showPage('home');return false;">Home</a><a class="ft-link" href="#" onclick="showPage('who');return false;">Who is She?</a><a class="ft-link" href="#" onclick="showPage('skill');return false;">Business Skill</a><a class="ft-link" href="#" onclick="showPage('insight');return false;">Inside &amp; Insight</a></div>
+      <div><p class="ft-col-title">Contact</p><span class="ft-link">jiwoosim@naver.com</span><span class="ft-link">010-7306-2545</span></div>
+      <div><p class="ft-col-title">Apply</p><div class="ft-contact-row">현대오토에버 전략기획본부 PR부서</div></div>
+    </div>
+    <div class="footer-copy"><span>© 2026 SIM JIWOO</span><span>FOR HYUNDAI AUTOEVER RECRUITMENT ONLY</span></div>
+  </footer>
+</div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>

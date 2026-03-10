@@ -1,0 +1,470 @@
+/* ════════════════════════════════════
+   현대오토에버 스타일 GNB + 히어로
+════════════════════════════════════ */
+
+/* ── 리셋: 기존 gnb 오버라이드 ── */
+.gnb { all: unset; display: block; }
+
+.gnb {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: 64px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  transition: box-shadow .3s;
+}
+.gnb.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
+
+.gnb-wrap {
+  display: flex; align-items: center;
+  max-width: 1560px; margin: 0 auto; padding: 0 32px;
+  height: 64px; gap: 0;
+}
+
+/* ── 로고 ── */
+.gnb-logo {
+  display: flex; align-items: center; cursor: pointer;
+  margin-right: 40px; flex-shrink: 0; text-decoration: none;
+  gap: 0;
+}
+.gnb-logo-mark {
+  display: flex; flex-direction: column; line-height: 1;
+}
+.glm-hyundai {
+  font-size: 9px; font-weight: 700; letter-spacing: .16em;
+  color: #002C5F; text-transform: uppercase;
+}
+.glm-autoever {
+  font-size: 20px; font-weight: 700; color: #002C5F;
+  letter-spacing: -.02em; line-height: 1.1;
+  font-family: 'Arial', sans-serif;
+}
+.glm-sub {
+  font-size: 8px; font-weight: 400; color: #00aad2;
+  letter-spacing: .2em; text-transform: uppercase; margin-top: 1px;
+}
+
+/* ── 중앙 4개 메뉴 ── */
+.gnb-center-menu {
+  display: flex; align-items: center; list-style: none;
+  flex: 1; gap: 0; height: 64px;
+  margin: 0; padding: 0;
+}
+.gcm-item { height: 64px; display: flex; align-items: center; position: relative; }
+.gcm-link {
+  display: flex; align-items: center; height: 64px; padding: 0 20px;
+  font-size: 13px; font-weight: 700; color: #1a1a1a;
+  letter-spacing: .04em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap;
+  transition: color .2s;
+  position: relative;
+}
+.gcm-link::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; right: 50%;
+  height: 2px; background: #002C5F;
+  transition: left .25s ease, right .25s ease;
+}
+.gcm-link:hover { color: #002C5F; }
+.gcm-link:hover::after,
+.gcm-link.active::after { left: 20px; right: 20px; }
+.gcm-link.active { color: #00aad2; }
+
+/* ── 우측 유틸 ── */
+.gnb-util {
+  display: flex; align-items: center; gap: 4px;
+  flex-shrink: 0; height: 64px; margin-left: auto;
+}
+.gu-link {
+  display: flex; align-items: center; height: 64px; padding: 0 12px;
+  font-size: 13px; font-weight: 500; color: #555;
+  letter-spacing: .04em; text-decoration: none; white-space: nowrap;
+  transition: color .2s;
+}
+.gu-link:hover { color: #002C5F; }
+.gu-link.active-blue { color: #00aad2; font-weight: 700; }
+
+.gu-cta {
+  display: flex; align-items: center; gap: 6px;
+  height: 36px; padding: 0 18px; margin: 0 8px;
+  border: 1.5px solid #002C5F; background: transparent;
+  font-size: 12px; font-weight: 500; color: #002C5F;
+  font-family: 'Noto Sans KR', sans-serif; letter-spacing: .06em;
+  cursor: pointer; border-radius: 20px;
+  transition: all .2s;
+}
+.gu-cta:hover { background: #002C5F; color: #fff; }
+
+.gu-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #555; transition: all .2s;
+}
+.gu-icon:hover { background: rgba(0,0,0,.05); color: #002C5F; }
+
+
+/* ════════════════════════════════════
+   히어로 — 현대오토에버 완전 동일 레이아웃
+════════════════════════════════════ */
+
+.ae-hero {
+  display: grid;
+  /* 좌측 대형 슬라이드 : 우측 2개 카드 = 73.5% : 26.5% */
+  grid-template-columns: 1fr 340px;
+  height: calc(100vh - 64px);
+  max-height: 700px;
+  min-height: 520px;
+  margin-top: 64px;
+  overflow: hidden;
+  gap: 0;
+}
+
+/* ── 좌측 메인 슬라이드 ── */
+.ae-hero-main {
+  position: relative; overflow: hidden;
+  background: #08111e;
+}
+
+.ae-slide {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .9s cubic-bezier(.16,1,.3,1);
+  pointer-events: none;
+}
+.ae-slide.active { opacity: 1; pointer-events: auto; }
+
+/* 사진 배경 */
+.ae-slide-bg { position: absolute; inset: 0; }
+.ae-photo-bg { position: absolute; inset: 0; overflow: hidden; }
+.ae-photo-overlay {
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(4,10,20,.82) 0%,
+    rgba(4,10,20,.55) 50%,
+    rgba(4,10,20,.2) 100%
+  );
+}
+/* 하단 그라디언트 (텍스트 가독성) */
+.ae-photo-bg::after {
+  content: ''; position: absolute; inset: 0; z-index: 3;
+  background: linear-gradient(to top, rgba(4,10,20,.75) 0%, transparent 45%);
+}
+.ae-photo-visual {
+  position: absolute; inset: 0; z-index: 1;
+}
+.ae-photo-visual svg { width: 100%; height: 100%; }
+
+/* 슬라이드별 배경 색조 */
+.ae-photo-0 { background: linear-gradient(135deg, #08111e 0%, #0d2040 60%, #0a1830 100%); }
+.ae-photo-1 { background: linear-gradient(135deg, #060d18 0%, #0c1e36 60%, #081525 100%); }
+.ae-photo-2 { background: linear-gradient(135deg, #050c18 0%, #091830 60%, #050e1e 100%); }
+
+/* 슬라이드 텍스트 콘텐츠 */
+.ae-slide-content {
+  position: absolute;
+  bottom: 72px; left: 52px;
+  z-index: 10; max-width: 620px;
+}
+.ae-sc-tag {
+  font-size: 11px; font-weight: 500; color: #00aad2;
+  letter-spacing: .2em; text-transform: uppercase;
+  margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .6s ease .1s, transform .6s ease .1s;
+}
+.ae-sc-tag::before { content: ''; width: 24px; height: 1px; background: #00aad2; }
+.ae-slide.active .ae-sc-tag { opacity: 1; transform: translateY(0); }
+
+.ae-sc-title {
+  font-size: clamp(26px, 3.2vw, 44px); font-weight: 700; color: #fff;
+  line-height: 1.28; letter-spacing: -.025em; word-break: keep-all;
+  margin-bottom: 20px;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .7s ease .25s, transform .7s ease .25s;
+}
+.ae-slide.active .ae-sc-title { opacity: 1; transform: translateY(0); }
+
+.ae-sc-desc {
+  font-size: 15px; font-weight: 300; color: rgba(255,255,255,.65);
+  line-height: 1.75; word-break: keep-all;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .7s ease .4s, transform .7s ease .4s;
+}
+.ae-slide.active .ae-sc-desc { opacity: 1; transform: translateY(0); }
+
+/* ── 페이지네이션 (현대오토에버 스타일: 숫자 — 숫자  < >) ── */
+.ae-pager {
+  position: absolute; bottom: 28px; right: 36px; z-index: 20;
+  display: flex; align-items: center; gap: 10px;
+}
+.ae-pager-cur {
+  font-size: 18px; font-weight: 700; color: #fff;
+  min-width: 18px; text-align: right;
+}
+.ae-pager-line {
+  width: 36px; height: 1px; background: rgba(255,255,255,.4);
+  position: relative; overflow: hidden;
+}
+.ae-pager-line::after {
+  content: ''; position: absolute; top: 0; left: 0; height: 100%;
+  background: #00aad2;
+  animation: pagerProgress 4s linear infinite;
+}
+@keyframes pagerProgress { 0%{width:0} 100%{width:100%} }
+.ae-pager-total {
+  font-size: 14px; font-weight: 400; color: rgba(255,255,255,.4);
+}
+.ae-pager-btn {
+  width: 36px; height: 36px; background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2); color: #fff;
+  font-size: 20px; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; transition: all .2s; font-family: sans-serif;
+  border-radius: 0;
+}
+.ae-pager-btn:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4); }
+
+/* ── 우측 사이드 카드 2개 ── */
+.ae-hero-side {
+  display: flex; flex-direction: column; gap: 0;
+  overflow: hidden;
+}
+
+.ae-side-card {
+  flex: 1; position: relative; cursor: pointer; overflow: hidden;
+}
+.ae-side-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform .6s cubic-bezier(.16,1,.3,1);
+}
+.ae-side-card:hover .ae-side-bg { transform: scale(1.05); }
+
+.ae-side-bg-1 {
+  background: linear-gradient(145deg, #0d1f38 0%, #1a3a6e 50%, #003399 100%);
+}
+.ae-side-bg-1::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 70% 30%, rgba(0,170,210,.2) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(0,44,95,.4) 0%, transparent 50%);
+}
+.ae-side-bg-2 {
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+.ae-side-bg-2::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,.06) 0%, transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(0,170,210,.15) 0%, transparent 50%);
+}
+
+.ae-side-overlay {
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.2) 60%, transparent 100%);
+  transition: background .3s;
+}
+.ae-side-card:hover .ae-side-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.35) 60%, transparent 100%);
+}
+
+.ae-side-content {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+  padding: 20px 22px;
+}
+.ae-side-badge {
+  display: inline-block; font-size: 9px; font-weight: 700;
+  letter-spacing: .18em; padding: 4px 10px; margin-bottom: 10px;
+}
+.insight-badge { background: #002C5F; color: #fff; }
+.news-badge    { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); border: 1px solid rgba(255,255,255,.25); }
+
+.ae-side-title {
+  font-size: 16px; font-weight: 700; color: #fff;
+  line-height: 1.4; word-break: keep-all;
+  transition: color .2s;
+}
+.ae-side-card:hover .ae-side-title { color: #00aad2; }
+
+.ae-side-action {
+  display: block; font-size: 11px; color: rgba(255,255,255,.5);
+  letter-spacing: .1em; margin-top: 8px;
+  transition: color .2s, transform .2s;
+}
+.ae-side-card:hover .ae-side-action { color: #00aad2; transform: translateX(4px); }
+
+
+/* ════════════════════════════════════
+   챗봇 버튼 + 창 (우하단 파란 원형)
+════════════════════════════════════ */
+#chatbot-btn {
+  position: fixed; bottom: 32px; right: 32px; z-index: 8000;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #00aad2; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,170,210,.45);
+  transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s;
+}
+#chatbot-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 32px rgba(0,170,210,.55);
+}
+#chatbot-btn svg { transition: transform .3s; }
+#chatbot-btn.open svg { transform: rotate(90deg); }
+
+/* 챗봇 창 */
+#chatbot-window {
+  position: fixed; bottom: 98px; right: 28px; z-index: 7999;
+  width: 380px; height: 560px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(0,0,0,.18), 0 4px 20px rgba(0,0,0,.1);
+  display: flex; flex-direction: column;
+  transform: scale(.9) translateY(16px);
+  transform-origin: bottom right;
+  opacity: 0; pointer-events: none;
+  transition: all .3s cubic-bezier(.16,1,.3,1);
+}
+#chatbot-window.open {
+  opacity: 1; transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+/* 챗봇 헤더 */
+.cb-header {
+  background: #002C5F; padding: 16px 20px;
+  display: flex; align-items: center; gap: 12px;
+  flex-shrink: 0;
+}
+.cb-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #00aad2, #0066cc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.cb-info { flex: 1; }
+.cb-name { font-size: 14px; font-weight: 700; color: #fff; }
+.cb-status {
+  font-size: 11px; color: rgba(255,255,255,.6);
+  display: flex; align-items: center; gap: 5px; margin-top: 2px;
+}
+.cb-status::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: #4caf50; flex-shrink: 0;
+}
+.cb-close {
+  width: 28px; height: 28px; border: none; background: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.7); cursor: pointer; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; line-height: 1; transition: background .2s;
+}
+.cb-close:hover { background: rgba(255,255,255,.2); color: #fff; }
+
+/* 메시지 영역 */
+.cb-messages {
+  flex: 1; overflow-y: auto; padding: 16px; display: flex;
+  flex-direction: column; gap: 12px;
+  scroll-behavior: smooth;
+}
+.cb-messages::-webkit-scrollbar { width: 4px; }
+.cb-messages::-webkit-scrollbar-track { background: transparent; }
+.cb-messages::-webkit-scrollbar-thumb { background: rgba(0,0,0,.12); border-radius: 2px; }
+
+/* 메시지 버블 */
+.cb-msg {
+  display: flex; gap: 8px; align-items: flex-end;
+  animation: cbMsgIn .3s ease;
+}
+@keyframes cbMsgIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cb-msg.user { flex-direction: row-reverse; }
+
+.cb-msg-avatar {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #00aad2, #0066cc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+}
+.cb-msg.user .cb-msg-avatar { background: #e8f0fe; color: #002C5F; }
+
+.cb-msg-bubble {
+  max-width: 270px; padding: 10px 14px;
+  font-size: 13px; line-height: 1.65; font-family: 'Noto Sans KR', sans-serif;
+  word-break: break-word; position: relative;
+}
+.cb-msg.bot  .cb-msg-bubble {
+  background: #f4f6f8; color: #1a1a1a;
+  border-radius: 0 12px 12px 12px;
+}
+.cb-msg.user .cb-msg-bubble {
+  background: #002C5F; color: #fff;
+  border-radius: 12px 12px 0 12px;
+}
+
+/* 타이핑 인디케이터 */
+.cb-typing {
+  display: flex; gap: 8px; align-items: flex-end;
+  animation: cbMsgIn .3s ease;
+}
+.cb-typing-dots {
+  background: #f4f6f8; padding: 12px 16px;
+  border-radius: 0 12px 12px 12px;
+  display: flex; gap: 4px; align-items: center;
+}
+.cb-typing-dots span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #aaa; animation: typingDot 1.2s infinite;
+}
+.cb-typing-dots span:nth-child(2) { animation-delay: .2s; }
+.cb-typing-dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes typingDot {
+  0%, 60%, 100% { transform: translateY(0); opacity: .4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* 빠른 질문 칩 */
+.cb-chips {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 8px 16px 4px;
+}
+.cb-chip {
+  font-size: 11px; color: #002C5F; border: 1px solid rgba(0,44,95,.25);
+  padding: 5px 12px; background: #fff; cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif; letter-spacing: .02em;
+  transition: all .2s; border-radius: 20px;
+}
+.cb-chip:hover { background: #002C5F; color: #fff; border-color: #002C5F; }
+
+/* 입력창 */
+.cb-input-row {
+  display: flex; gap: 0; border-top: 1px solid rgba(0,0,0,.08);
+  padding: 10px 12px; flex-shrink: 0;
+}
+.cb-input {
+  flex: 1; border: 1px solid rgba(0,0,0,.1); padding: 8px 14px;
+  font-size: 13px; font-family: 'Noto Sans KR', sans-serif;
+  color: #333; resize: none; background: #fafafa;
+  transition: border-color .2s; outline: none;
+  border-radius: 20px 0 0 20px; line-height: 1.4;
+}
+.cb-input:focus { border-color: #00aad2; background: #fff; }
+.cb-send {
+  width: 44px; height: 44px; background: #002C5F; border: none;
+  color: #fff; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; transition: background .2s;
+  border-radius: 0 20px 20px 0; flex-shrink: 0;
+}
+.cb-send:hover { background: #00aad2; }
+.cb-send:disabled { background: #ccc; cursor: not-allowed; }
+
+
+/* ════════════════════════════════════
+   앱 body 상단 패딩 조정 (GNB 64px)
+════════════════════════════════════ */
+body { padding-top: 0 !important; }
+.page { padding-top: 0 !important; }
+#page-home { margin-top: 0; }
+
+/* 히어로 아래 섹션들 */
+.ae-hero + * { margin-top: 0; }
